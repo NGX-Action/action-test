@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  centos:
+    build:
+      context: pod/centos
+      dockerfile: Dockerfile
+    command: [ "echo", "hello world" ]
