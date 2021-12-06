@@ -5,6 +5,7 @@ on:
     branches:
       - 'master'
       - 'release/**'
+      - 'ci/**'
   pull_request:
     branches:
       - 'master'
@@ -31,8 +32,11 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Create Soft Link
+        run: |
+          sudo chmod 777 -R /var
+
       - name: Cache Docker
-        id: cache-primes
         uses: actions/cache@v2
         with:
           path: /var/lib/docker/image
