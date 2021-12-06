@@ -34,7 +34,8 @@ jobs:
 
       - name: Create Soft Link
         run: |
-          sudo chmod 777 -R /var
+          sudo chmod 777 /var
+          sudo chmod 777 /var/lib/docker
 
       - name: Cache Docker
         uses: actions/cache@v2
