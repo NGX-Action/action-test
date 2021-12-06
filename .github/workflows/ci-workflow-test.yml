@@ -31,6 +31,13 @@ jobs:
         with:
           submodules: recursive
 
+      - name: Cache Docker
+        id: cache-primes
+        uses: actions/cache@v2
+        with:
+          path: /var/lib/docker/image
+          key: ${{ matrix.platform }}-${{ matrix.os_name }}-docker-images
+
       - name: System install basic env
         run: |
           sudo apt update && sudo apt install neofetch
@@ -43,5 +50,5 @@ jobs:
         run: |
           cd ci && docker-compose up
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+#      - name: Setup tmate session
+#        uses: mxschmitt/action-tmate@v3
