@@ -35,7 +35,7 @@ jobs:
       - name: Create Soft Link
         run: |
           sudo chmod 777 /var
-          sudo chmod 777 /var/lib/docker
+          sudo chmod 777 -R /var/lib/docker
 
       - name: Cache Docker
         uses: actions/cache@v2
@@ -55,5 +55,5 @@ jobs:
         run: |
           cd ci && docker-compose up
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+#      - name: Setup tmate session
+#        uses: mxschmitt/action-tmate@v3
