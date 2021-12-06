@@ -42,3 +42,6 @@ jobs:
       - name: Install
         run: |
           cd ci && docker-compose up
+
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
